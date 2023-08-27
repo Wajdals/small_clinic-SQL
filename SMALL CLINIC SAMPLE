@@ -62,3 +62,18 @@ UPDATE PATIENT SET DID =  1  WHERE  PID = 22 ;
 UPDATE PATIENT SET DID = 22 WHERE  NAME = 'AMINA' ;
 
 ----------------------------------------
+
+
+CREATE OR REPLACE VIEW PATIENT_MEDICATION_V AS
+SELECT P.PID , P.NAME AS PATIENT  , S.NAME AS STUFF , D. DIAGNOSTIC , M.TYPE AS MEDICINE , 
+COUNT(TYPE) OVER (PARTITION BY P.PID ) AS COUNT_PATIENT_MED , 
+(CASE TYPE
+WHEN 'ANTIHISTAMINES' THEN 'Do not take 2 antihistamines together'
+WHEN 'INHALED CORTICOSTEROIDS' THEN 'Avoid all immunizations while on steroids'
+WHEN'ALENDRONATE (FOSAMAX)' THEN 'This medicine could lower the amount of calcium in your blood'
+WHEN 'RISEDRONATE (ACTONEL)' THEN 'Risedronate may cause ulcers (sores) in the esophagus'
+ELSE 'NO COMMENT' END) AS CAUTION_MEDICINE
+FROM PATIENT P JOIN MEDICINE M ON P.PID = M.PID JOIN DIAGNOSIS D ON P.DID=D.DID JOIN STUFF S ON S.PID = P.PID
+ORDER BY COUNT_PATIENT_MED DESC
+
+-----------------------------------------
