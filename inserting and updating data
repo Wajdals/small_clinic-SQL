@@ -1,0 +1,58 @@
+insert into STAFF (sid , name , job , sal ) values ( sid_sq.nextval , 'WAJD' , 'health informatics' , 10000 ) ;
+
+INSERT into STAFF (sid , name , job , sal ) values ( sid_sq.nextval , 'ALI' , 'NURSE' , 10000 ) ;
+
+INSERT into STAFF (sid , name , job , sal ) values ( sid_sq.nextval , 'ABEER' , 'DOCTOR' , 10000 ) ;
+
+INSERT into STAFF (sid , name , job , sal ) values ( sid_sq.nextval , 'MOHAMED' , 'pharmacist' , 10000 ) ;
+
+INSERT INTO PATIENT (PID , NAME , APPOINMENT_DATE ) VALUES (PID_SQ.NEXTVAL , 'OMAR' , '8/27/2023') ;
+
+INSERT INTO PATIENT (PID , NAME , APPOINMENT_DATE ) VALUES (PID_SQ.NEXTVAL , 'LAILA' , '9/10/2023') ;
+
+INSERT INTO PATIENT (PID , NAME , APPOINMENT_DATE ) VALUES (PID_SQ.NEXTVAL , 'AMINA' , '8/22/2023') ;
+
+
+
+INSERT INTO DIAGNOSIS ( DID , DIAGNOSTIC , SID , PID ) VALUES (DID_SQ.NEXTVAL , 'ALLERGIE' , 4 , 23) ;
+
+INSERT INTO DIAGNOSIS ( DID , DIAGNOSTIC , SID , PID ) VALUES (DID_SQ.NEXTVAL , 'ASTHMA' , 6 , 21) ;
+
+INSERT INTO DIAGNOSIS ( DID , DIAGNOSTIC , SID , PID ) VALUES (DID_SQ.NEXTVAL , 'OSTEOPOROSIS' , 5 , 22) ;
+
+
+INSERT INTO MEDICINE (MID , TYPE , SID , PID ) VALUES ( MID_SQ.NEXTVAL , 'ANTIHISTAMINES' , 4 , 23) ;
+
+INSERT INTO MEDICINE (MID , TYPE , SID , PID ) VALUES ( MID_SQ.NEXTVAL , 'INHALED CORTICOSTEROIDS' , 6 , 21) ;
+
+INSERT INTO MEDICINE (MID , TYPE , SID , PID ) VALUES ( MID_SQ.NEXTVAL , 'ALENDRONATE (FOSAMAX)' , 5 , 22) ;
+
+INSERT INTO MEDICINE (MID , TYPE , SID , PID ) VALUES ( MID_SQ.NEXTVAL , 'RISEDRONATE (ACTONEL)' , 5 , 22) ;
+
+UPDATE PATIENT SET SID = 6  WHERE  PID = 21 ;
+UPDATE PATIENT SET SID =  5  WHERE  PID = 22 ;
+UPDATE PATIENT SET SID = 4 WHERE  NAME = 'AMINA' ;
+
+insert all 
+into patient ( pid , name , APPOINMENT_DATE  ) values (20 , 'dani' , '2/11/2023')
+into patient ( pid , name , APPOINMENT_DATE  ) values (19 , 'SOFIA' , '1/22/2023')
+into patient ( pid , name , APPOINMENT_DATE  ) values (24 , 'FAHED' , '8/23/2023')
+SELECT * FROM DUAL ;
+
+INSERT ALL
+into diagnosis  (DID, DIAGNOSTIC, PID, SID ) values (2 , 'ESSENTIAL HYPERTENSION' , 20 , 5)
+into diagnosis  (DID, DIAGNOSTIC, PID, SID ) values (3 ,'ESSENTIAL HYPERTENSION' , 19 , 4 )
+into diagnosis  (DID, DIAGNOSTIC, PID, SID ) values (4 , 'ESSENTIAL HYPERTENSION' ,24 , 4 )
+SELECT * FROM DUAL ; 
+
+
+
+UPDATE PATIENT SET SID = 5 WHERE  PID = 20 ;
+UPDATE PATIENT SET SID =  4  WHERE  PID = 19 ;
+UPDATE PATIENT SET SID = 4 WHERE  PID =24 ;
+
+INSERT ALL
+into MEDICINE  (MID, TYPE, PID, SID ) values (5 , 'ACE INHIBITORS' , 20 , 5)
+into MEDICINE  (MID, TYPE, PID, SID ) values (6 ,'ACE INHIBITORS' , 19 , 4 )
+into MEDICINE  (MID, TYPE, PID, SID ) values (7 , 'ACE INHIBITORS' ,24 , 4 )
+SELECT * FROM DUAL ; 
